@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title Forte manager
+    = stylesheet_link_tag    "forte_manager/application", media: "all"
+    = javascript_include_tag "forte_manager/application"
+    = javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'
+    %link{ href: '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', rel: 'stylesheet' }
+    %link{ href: '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', rel: 'stylesheet' }
+    = csrf_meta_tags
+  %body
+    = yield

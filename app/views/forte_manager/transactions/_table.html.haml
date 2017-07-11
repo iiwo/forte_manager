@@ -1,0 +1,22 @@
+%table.table
+  %thead
+    %tr
+      %th id
+      %th name
+      %th amount
+      %th date
+      %th action
+      %th status
+      %th token
+      %th response_code
+  %tbody
+    - transactions.each do |transaction|
+      %tr{ id: "transaction-#{transaction.transaction_id}" }
+        %td= transaction.transaction_id
+        %td= transaction.full_name
+        %td= transaction.authorization_amount
+        %td= transaction.received_date
+        %td= transaction.action
+        %td= transaction.status
+        %td= transaction.customer_token
+        %td= transaction.response_code

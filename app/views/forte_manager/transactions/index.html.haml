@@ -1,0 +1,30 @@
+.well
+  .row
+    = form_for_filterrific filterrific do |f|
+      .col-md-4
+        .form-group
+          %label Search
+          = f.text_field(:search_query, class: 'filterrific-periodically-observed', class: 'form-control')
+      .col-md-2
+        .form-group
+          %label Type
+          = f.select(:with_type, filterrific.select_options[:with_type], { include_blank: '- Any -' }, class: 'form-control')
+      .col-md-2
+        .form-group
+          %label Status
+          = f.select(:with_status, filterrific.select_options[:with_status], { include_blank: '- Any -' }, class: 'form-control')
+      .col-md-2
+        .form-group
+          %label Action
+          = f.select(:with_action, filterrific.select_options[:with_action], { include_blank: '- Any -' }, class: 'form-control')
+      .col-md-2
+        .form-group
+          %label Code
+          = f.select(:with_response_code, filterrific.select_options[:with_response_code], { include_blank: '- Any -' }, class: 'form-control')
+      .row
+        .col-md-12
+          .col-md-12
+            %p.text-muted
+              = link_to('Reset filters', reset_filterrific_url)
+
+= render 'list', transactions: transactions
