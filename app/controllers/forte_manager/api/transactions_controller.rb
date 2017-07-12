@@ -14,7 +14,8 @@ module ForteManager
               with_status: Transaction.options_for_status,
               with_action: Transaction.options_for_action,
               with_response_code: Transaction.options_for_response_code,
-              with_type: Transaction.options_for_types
+              with_type: Transaction.options_for_types,
+              sorted_by: Transaction.options_for_sorted_by
             }
           ) or return
           transactions = filterrific.find

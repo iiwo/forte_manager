@@ -13,9 +13,9 @@
     - transactions.each do |transaction|
       %tr{ id: "transaction-#{transaction.transaction_id}" }
         %td= transaction.transaction_id
-        %td= transaction.full_name
+        %td= transaction.customer_token.present? ? link_to(transaction.full_name, customer_path(transaction.customer_token)) : transaction.full_name
         %td= transaction.authorization_amount
-        %td= transaction.received_date
+        %td= transaction.display_date
         %td= transaction.action
         %td= transaction.status
         %td= transaction.customer_token

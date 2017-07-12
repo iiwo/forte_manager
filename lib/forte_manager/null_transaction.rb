@@ -28,5 +28,9 @@ module ForteManager
     def full_name
       [first_name, last_name].join(' ')
     end
+
+    def display_date
+      DateTime.parse(received_date).strftime("%m/%d/%y %I:%M %p")
+    end
   end
 end

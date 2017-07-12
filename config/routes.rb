@@ -13,6 +13,7 @@ ForteManager::Engine.routes.draw do
 
   if ForteManager.client
     resources :transactions
+    resources :customers, only: :show
     root 'transactions#index'
   end
 end

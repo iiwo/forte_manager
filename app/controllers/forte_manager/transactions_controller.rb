@@ -19,7 +19,8 @@ module ForteManager
           with_status:  JSON.parse(api_get(endpoint: 'transactions/statuses.json').body),
           with_action: JSON.parse(api_get(endpoint: 'transactions/actions.json').body),
           with_response_code: JSON.parse(api_get(endpoint: 'transactions/response_codes.json').body),
-          with_type: Transaction.options_for_types
+          with_type: Transaction.options_for_types,
+          sorted_by: Transaction.options_for_sorted_by
         }
       ) or return
       
